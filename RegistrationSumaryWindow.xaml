@@ -1,0 +1,70 @@
+﻿<Window x:Class="TimeTrackerUI.RegistrationSumaryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeTrackerUI"
+        mc:Ignorable="d"
+        Title="Summary" Height="300" Width="600" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="modelContainer" Opacity="0">
+            <ComboBoxItem Name="model"/>
+        </ComboBox>
+
+        <Label x:Name="TimeElapsed" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4"
+               Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+               Content="00:00:00" FontSize="40"/>
+
+        <TextBlock Grid.Column="1"  Grid.Row="3" Grid.ColumnSpan="2" FontSize="14"
+                   Text="Started" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label x:Name="TimeStart" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" FontSize="14"
+               Content="00/00/0000 00:00:00" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
+
+        <TextBlock Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" FontSize="14"
+                   Text="Stopped" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label x:Name="TimeStop" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" FontSize="14"
+               Content="00/00/0000 00:00:00" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
+
+        <TextBlock Grid.Column="1"  Grid.Row="4" Grid.ColumnSpan="2" FontSize="14"
+                   Text="Customer" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label x:Name="Customer" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" FontSize="14"
+               Content="customername" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
+
+
+        <TextBlock Grid.Column="3"  Grid.Row="4" Grid.ColumnSpan="2" FontSize="14"
+                   Text="Task" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label x:Name="Task" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" FontSize="14"
+               Content="Taskname" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
+        <Button x:Name="Save" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2"
+                Content="Save" FontSize="20" Margin="10,5,10,5" Click="Save_Click"/>
+
+
+        <Button x:Name="Discard" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"
+                Content="Discard" FontSize="20" Margin="10,5,10,5" Click="Discard_Click"/>
+
+
+
+    </Grid>
+</Window>

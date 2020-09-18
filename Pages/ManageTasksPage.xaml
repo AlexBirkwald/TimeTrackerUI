@@ -1,0 +1,64 @@
+﻿<Page x:Class="TimeTrackerUI.ManageTasksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TimeTrackerUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ManageTasksPage"  Background="#FF3F3C4D" Foreground="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="2" FontSize="16" Grid.ColumnSpan="3" Foreground="White"
+               Content="Task Name" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <TextBox x:Name="TaskNameTextBox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3"
+                 VerticalContentAlignment="Center" Margin="0,5,0,5" FontSize="16"/>
+
+        <Label Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Paid Task Type"  Opacity="0"
+               FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+        <CheckBox x:Name="PaidTaskCheckBox" Grid.Column="3" Grid.Row="4"                   Opacity="0"
+                  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+        <Button x:Name="CreateUpdateButton" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3"
+                Content="Create Task" FontSize="18" BorderThickness="0" Click="CreateUpdateButton_Click"/>
+
+        <DataGrid x:Name="TasksDataGrid" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="6"
+                 Grid.RowSpan="5" Margin="15,0,0,0" MinColumnWidth="100" IsReadOnly="True"
+                  AreRowDetailsFrozen="True" FrozenColumnCount="2"/>
+
+        <Button x:Name="EditSelectedButton" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3"
+                Margin="15,5,0,0" Content="Edit Selected" FontSize="16" BorderThickness="0" Click="EditSelectedButton_Click"/>
+
+        <Button x:Name="DeleteSelectedButton" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="3"
+                Margin="10,5,0,0" Content="Delete Selected" FontSize="16" BorderThickness="0" Click="DeleteSelectedButton_Click"/>
+
+    </Grid>
+</Page>
